@@ -1,12 +1,12 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: spring-sensors-consumer-web.default.tap.20240320014308.0.0
+  name: spring-sensors-consumer-web.default.tap.20240320230047.0.0
 spec:
   refName: spring-sensors-consumer-web.default.tap
-  version: 20240320014308.0.0
+  version: 20240320230047.0.0
   releaseNotes: |
-    Release v20240320014308.0.0 of package spring-sensors-consumer-web.default.tap
+    Release v20240320230047.0.0 of package spring-sensors-consumer-web.default.tap
   template:
     spec:
       fetch:
