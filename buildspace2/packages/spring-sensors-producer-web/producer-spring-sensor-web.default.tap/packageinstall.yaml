@@ -1,0 +1,14 @@
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: producer-spring-sensor-web.default.tap-pkgi
+spec:
+  packageRef:
+    refName: producer-spring-sensor-web.default.tap
+    versionSelection:
+      constraints: 20240321104645.0.0
+      prereleases: {}
+  serviceAccountName: default
+  values:
+  - secretRef:
+      name: producer-spring-sensor-web.default.tap-values
