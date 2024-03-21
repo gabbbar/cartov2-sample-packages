@@ -2,8 +2,8 @@ apiVersion: servicebinding.io/v1beta1
 kind: ServiceBinding
 metadata:
   labels:
-    carto.run/workload-name: spring-sensors-producer-web
-  name: spring-sensors-producer-web-rmq
+    carto.run/workload-name: spring-sensors-producer
+  name: spring-sensors-producer-rmq
 spec:
   name: rmq
   service:
@@ -13,4 +13,4 @@ spec:
   workload:
     apiVersion: serving.knative.dev/v1
     kind: Service
-    name: spring-sensors-producer-web
+    name: spring-sensors-producer
