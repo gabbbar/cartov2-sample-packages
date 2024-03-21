@@ -1,12 +1,12 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: producer-spring-sensor-web.default.tap.20240321104645.0.0
+  name: producer-spring-sensor-web.default.tap.20240321172036.0.0
 spec:
   refName: producer-spring-sensor-web.default.tap
-  version: 20240321104645.0.0
+  version: 20240321172036.0.0
   releaseNotes: |
-    Release v20240321104645.0.0 of package producer-spring-sensor-web.default.tap
+    Release v20240321172036.0.0 of package producer-spring-sensor-web.default.tap
   template:
     spec:
       fetch:
