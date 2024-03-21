@@ -6,4 +6,5 @@ metadata:
 stringData:
   values.yml: |
     ---
+    minScale: "1"
     # workload_name: example
