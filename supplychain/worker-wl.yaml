@@ -1,14 +1,14 @@
 apiVersion: supply-chain.apps.tanzu.vmware.com/v1alpha1
 kind: SupplyChain
 metadata:
-    name: consumer-web-1
+    name: worker-wl
 spec:
     defines:
         group: supplychains.tanzu.vmware.com
-        kind: consumer-web-1
-        plural: consumer-web-1s
+        kind: worker-wl
+        plural: worker-wls
         version: v1alpha1
-    description: worker workload sc for consumer web
+    description: worker type workload sc
     stages:
         - componentRef:
             name: source-git-provider-1.0.0
@@ -17,14 +17,14 @@ spec:
             name: buildpack-build-1.0.0
           name: buildpack-build
         - componentRef:
-            name: conventions-1.0.0
-          name: conventions
-        - componentRef:
             name: trivy-image-scan-1.0.0
           name: trivy-image-scan
         - componentRef:
-            name: app-config-web-1.0.0
-          name: app-config-web
+            name: conventions-1.0.0
+          name: conventions
+        - componentRef:
+            name: app-config-worker-1.0.0
+          name: app-config-worker
         - componentRef:
             name: carvel-package-1.0.0
           name: carvel-package

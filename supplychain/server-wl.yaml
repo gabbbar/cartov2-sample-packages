@@ -1,0 +1,33 @@
+apiVersion: supply-chain.apps.tanzu.vmware.com/v1alpha1
+kind: SupplyChain
+metadata:
+    name: server-wl
+spec:
+    defines:
+        group: supplychains.tanzu.vmware.com
+        kind: server-wl
+        plural: server-wls
+        version: v1alpha1
+    description: server type workload sc
+    stages:
+        - componentRef:
+            name: source-git-provider-1.0.0
+          name: source-git-provider
+        - componentRef:
+            name: buildpack-build-1.0.0
+          name: buildpack-build
+        - componentRef:
+            name: trivy-image-scan-1.0.0
+          name: trivy-image-scan
+        - componentRef:
+            name: conventions-1.0.0
+          name: conventions
+        - componentRef:
+            name: app-config-server-1.0.0
+          name: app-config-server
+        - componentRef:
+            name: carvel-package-1.0.0
+          name: carvel-package
+        - componentRef:
+            name: git-writer-1.0.0
+          name: git-writer
