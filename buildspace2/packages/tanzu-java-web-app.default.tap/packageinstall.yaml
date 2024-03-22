@@ -6,7 +6,7 @@ spec:
   packageRef:
     refName: tanzu-java-web-app.default.tap
     versionSelection:
-      constraints: 20240320231347.0.0
+      constraints: 20240322131524.0.0
       prereleases: {}
   serviceAccountName: default
   values:
