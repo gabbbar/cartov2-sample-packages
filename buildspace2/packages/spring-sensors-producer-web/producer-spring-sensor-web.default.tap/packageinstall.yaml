@@ -6,7 +6,7 @@ spec:
   packageRef:
     refName: producer-spring-sensor-web.default.tap
     versionSelection:
-      constraints: 20240402101947.0.0
+      constraints: 20240402102205.0.0
       prereleases: {}
   serviceAccountName: default
   values:
