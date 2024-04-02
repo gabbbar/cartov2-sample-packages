@@ -1,17 +1,17 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: spring-sensors-consumer-web.default.tap.20240320230047.0.0
+  name: spring-sensors-consumer-web.default.tap.20240402101850.0.0
 spec:
   refName: spring-sensors-consumer-web.default.tap
-  version: 20240320230047.0.0
+  version: 20240402101850.0.0
   releaseNotes: |
-    Release v20240320230047.0.0 of package spring-sensors-consumer-web.default.tap
+    Release v20240402101850.0.0 of package spring-sensors-consumer-web.default.tap
   template:
     spec:
       fetch:
       - imgpkgBundle:
-          image: vipal.azurecr.io/cartov2/sample-apps/spring-sensors-consumer-web-bundle@sha256:306da4ec3b4b4519ec3aa845d59e8025f967a354c4605bd30b2a020e1630579d
+          image: vipal.azurecr.io/cartov2/sample-apps/spring-sensors-consumer-web-bundle@sha256:628b98168dc52b2cf1ef4b8296fa86019d0be879cd9b3de09663151f7cb2b470
       template:
       - ytt:
           paths:
