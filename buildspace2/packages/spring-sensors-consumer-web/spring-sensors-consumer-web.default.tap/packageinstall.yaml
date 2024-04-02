@@ -6,7 +6,7 @@ spec:
   packageRef:
     refName: spring-sensors-consumer-web.default.tap
     versionSelection:
-      constraints: 20240402101850.0.0
+      constraints: 20240402102659.0.0
       prereleases: {}
   serviceAccountName: default
   values:
