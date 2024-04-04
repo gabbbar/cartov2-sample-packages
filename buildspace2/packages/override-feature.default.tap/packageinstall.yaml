@@ -1,0 +1,14 @@
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: override-feature.default.tap-pkgi
+spec:
+  packageRef:
+    refName: override-feature.default.tap
+    versionSelection:
+      constraints: 20240404135548.0.0
+      prereleases: {}
+  serviceAccountName: default
+  values:
+  - secretRef:
+      name: override-feature.default.tap-values
