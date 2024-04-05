@@ -1,0 +1,69 @@
+apiVersion: supply-chain.apps.tanzu.vmware.com/v1alpha1
+kind: SupplyChain
+metadata:
+    name: wfd-small-web
+spec:
+    defines:
+        group: supplychains.tanzu.vmware.com
+        kind: wfd-small-web
+        plural: wfd-small-webs
+        version: v1alpha1
+    description: wfd small size web app
+    stages:
+        - componentRef:
+            name: source-git-provider-1.0.0
+          name: source-git-provider
+        - componentRef:
+            name: buildpack-build-1.0.0
+          name: buildpack-build
+        - componentRef:
+            name: conventions-1.0.0
+          name: conventions
+        - componentRef:
+            name: app-config-web-1.0.0
+          name: app-config-web
+        - componentRef:
+            name: carvel-package-1.0.0
+          name: carvel-package
+        - componentRef:
+            name: git-writer-1.0.0
+          name: git-writer
+    config:
+      overrides:
+        - path: spec.build
+          value:
+            serviceAccountName: "default"
+            builder:
+              kind: "clusterbuilder"
+              name: "default"
+            cache:
+              enabled: false
+              image: ""
+            env:
+              - name: "BP_JVM_VERSION"
+                value: "21"
+
+        - path: spec.registry
+          value:
+            repository: "cartov2/sample-apps"
+            server: "vipal.azurecr.io"
+        - path: spec.gitOps
+          value:
+            branch: "main"
+            subPath: "buildspace2/packages"
+            url: "https://github.com/gabbbar/cartov2-sample-packages"
+        - path: spec.carvel.serviceAccountName
+          value: "default"
+        - path: spec.carvel.packageDomain
+          value: "default.tap"
+        - path: spec.carvel.valuesSecretName
+          value: ""
+        - path: spec.carvel.iaasAuthEnabled
+          value: true
+        - path: spec.carvel.caCertData
+          value: ""
+      defaults:
+        - path: spec.source.git.tag
+          value: "tap-1.8.0"
+        - path: spec.source.git.url
+          value: "https://github.com/vmware-tanzu/application-accelerator-samples"

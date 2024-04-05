@@ -1,0 +1,97 @@
+apiVersion: supplychains.tanzu.vmware.com/v1alpha1
+kind: wfd-small-web
+metadata:
+  name: where-for-dinner
+  namespace: where-for-dinner-small-1
+  labels:
+    app.kubernetes.io/part-of: where-for-dinner-api-gateway
+    apps.tanzu.vmware.com/auto-configure-actuators: "true"
+spec:
+  carvel:
+    packageName: "where-for-dinner-api-gateway.tanzu.vmware.com"
+  source:
+    git:
+      branch: ""
+      commit: ""
+      tag: "tap-1.8.0"
+      url: "https://github.com/vmware-tanzu/application-accelerator-samples"
+    subPath: "where-for-dinner/where-for-dinner-api-gateway"
+---
+apiVersion: supplychains.tanzu.vmware.com/v1alpha1
+kind: wfd-small-web
+metadata:
+  name: where-for-dinner-search
+  namespace: where-for-dinner-small-1
+  labels:
+    app.kubernetes.io/part-of: where-for-dinner-search
+    networking.knative.dev/visibility: cluster-local
+    apps.tanzu.vmware.com/auto-configure-actuators: "true"
+spec:
+  carvel:
+    packageName: "where-for-dinner-search.tanzu.vmware.com"
+  source:
+    git:
+      branch: ""
+      commit: ""
+      tag: "tap-1.8.0"
+      url: "https://github.com/vmware-tanzu/application-accelerator-samples"
+    subPath: "where-for-dinner/where-for-dinner-search"
+---
+apiVersion: supplychains.tanzu.vmware.com/v1alpha1
+kind: wfd-small-web
+metadata:
+  name: where-for-dinner-search-proc
+  namespace: where-for-dinner-small-1
+  labels:
+    app.kubernetes.io/part-of: where-for-dinner-search-proc
+    networking.knative.dev/visibility: cluster-local
+    apps.tanzu.vmware.com/auto-configure-actuators: "true"
+spec:
+  carvel:
+    packageName: "where-for-dinner-search-proc.tanzu.vmware.com"
+  source:
+    git:
+      branch: ""
+      commit: ""
+      tag: "tap-1.8.0"
+      url: "https://github.com/vmware-tanzu/application-accelerator-samples"
+    subPath: "where-for-dinner/where-for-dinner-search-proc"
+---
+apiVersion: supplychains.tanzu.vmware.com/v1alpha1
+kind: wfd-small-web
+metadata:
+  name: where-for-dinner-availability
+  namespace: where-for-dinner-small-1
+  labels:
+    app.kubernetes.io/part-of: where-for-dinner-availability
+    networking.knative.dev/visibility: cluster-local
+    apps.tanzu.vmware.com/auto-configure-actuators: "true"
+spec:
+  carvel:
+    packageName: "where-for-dinner-availability.tanzu.vmware.com"
+  source:
+    git:
+      branch: ""
+      commit: ""
+      tag: "tap-1.8.0"
+      url: "https://github.com/vmware-tanzu/application-accelerator-samples"
+    subPath: "where-for-dinner/where-for-dinner-availability"
+---
+apiVersion: supplychains.tanzu.vmware.com/v1alpha1
+kind: wfd-small-web
+metadata:
+  name: where-for-dinner-ui
+  namespace: where-for-dinner-small-1
+  labels:
+    app.kubernetes.io/part-of: where-for-dinner-ui
+    networking.knative.dev/visibility: cluster-local
+spec:
+  carvel:
+    packageName: "where-for-dinner-ui.tanzu.vmware.com"
+  source:
+    git:
+      branch: ""
+      commit: ""
+      tag: "tap-1.8.0"
+      url: "https://github.com/vmware-tanzu/application-accelerator-samples"
+    subPath: "where-for-dinner/where-for-dinner-ui"
