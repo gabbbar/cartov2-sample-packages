@@ -1,0 +1,15 @@
+apiVersion: servicebinding.io/v1
+kind: ServiceBinding
+metadata:
+  name: where-for-dinner-search-rmq
+spec:
+  name: rmq
+  replicas: 1
+  service:
+    apiVersion: bitnami.messaging.tanzu.vmware.com/v1alpha1
+    kind: RabbitmqCluster
+    name: rmq-where-for-dinner
+  workload:
+    apiVersion: serving.knative.dev/v1
+    kind: Service
+    name: where-for-dinner-search
