@@ -1,17 +1,17 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: spring-sensors-consumer-web.default.tap.20240402102659.0.0
+  name: where-for-dinner-ui.tanzu.vmware.com.default.tap.20240405175553.0.0
 spec:
-  refName: spring-sensors-consumer-web.default.tap
-  version: 20240402102659.0.0
+  refName: where-for-dinner-ui.tanzu.vmware.com.default.tap
+  version: 20240405175553.0.0
   releaseNotes: |
-    Release v20240402102659.0.0 of package spring-sensors-consumer-web.default.tap
+    Release v20240405175553.0.0 of package where-for-dinner-ui.tanzu.vmware.com.default.tap
   template:
     spec:
       fetch:
       - imgpkgBundle:
-          image: vipal.azurecr.io/cartov2/sample-apps/spring-sensors-consumer-web-bundle@sha256:1281f8ee2089429088894bf6b7b179aee03fb95a5f34e66b04c52383dfc09001
+          image: vipal.azurecr.io/cartov2/sample-apps/where-for-dinner-ui-bundle@sha256:1065b881d1137af2535b6b35790798a72dac27228b6ccd94a717c470da975ab6
       template:
       - ytt:
           paths:
@@ -30,7 +30,7 @@ spec:
         workload_name:
           type: string
           description: Used to generate resource names.
-          default: spring-sensors-consumer-web
+          default: where-for-dinner-ui
         minScale:
           type: string
           nullable: true

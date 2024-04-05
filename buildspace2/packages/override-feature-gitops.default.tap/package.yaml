@@ -1,17 +1,17 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: spring-sensors-consumer-web.default.tap.20240402102659.0.0
+  name: override-feature-gitops.default.tap.20240404180911.0.0
 spec:
-  refName: spring-sensors-consumer-web.default.tap
-  version: 20240402102659.0.0
+  refName: override-feature-gitops.default.tap
+  version: 20240404180911.0.0
   releaseNotes: |
-    Release v20240402102659.0.0 of package spring-sensors-consumer-web.default.tap
+    Release v20240404180911.0.0 of package override-feature-gitops.default.tap
   template:
     spec:
       fetch:
       - imgpkgBundle:
-          image: vipal.azurecr.io/cartov2/sample-apps/spring-sensors-consumer-web-bundle@sha256:1281f8ee2089429088894bf6b7b179aee03fb95a5f34e66b04c52383dfc09001
+          image: vipal.azurecr.io/cartov2/sample-apps/tanzu-java-web-app-bundle@sha256:667efef1f949cf669de1bf9ac3c0b545ded4c6f76e9caf7fcb6f5760bc7cef37
       template:
       - ytt:
           paths:
@@ -30,7 +30,7 @@ spec:
         workload_name:
           type: string
           description: Used to generate resource names.
-          default: spring-sensors-consumer-web
+          default: tanzu-java-web-app
         minScale:
           type: string
           nullable: true
