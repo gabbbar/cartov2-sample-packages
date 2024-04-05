@@ -1,0 +1,27 @@
+apiVersion: supply-chain.apps.tanzu.vmware.com/v1alpha1
+kind: SupplyChain
+metadata:
+    name: wfd-small-web-deployer
+spec:
+    defines:
+        group: supplychains.tanzu.vmware.com
+        kind: wfd-small-web-deployer
+        plural: wfd-small-web-deployers
+        version: v1alpha1
+    description: delpoy wfd small web app
+    stages:
+        - componentRef:
+            name: source-git-provider-1.0.0
+          name: source-git-provider
+        - componentRef:
+            name: source-package-translator-1.0.0
+          name: source-package-translator
+        - componentRef:
+            name: deployer-1.0.0
+          name: deployer
+    config:
+      defaults:
+        - path: spec.source.git.branch
+          value: "main"
+        - path: spec.source.git.url
+          value: "https://github.com/gabbbar/cartov2-sample-packages"

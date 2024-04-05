@@ -1,0 +1,79 @@
+apiVersion: supplychains.tanzu.vmware.com/v1alpha1
+kind: wfd-small-web-deployer
+metadata:
+  name: deploy-wfd-small
+  namespace: where-for-dinner-small-1
+spec:
+  source:
+    git:
+      commit: ""
+      tag: ""
+      url: "https://github.com/gabbbar/cartov2-sample-packages"
+      branch: "main"
+    subPath: ""
+  subPath:
+    path: "buildspace2/packages/where-for-dinner-api-gateway.tanzu.vmware.com.default.tap"
+---
+apiVersion: supplychains.tanzu.vmware.com/v1alpha1
+kind: wfd-small-web-deployer
+metadata:
+  name: deploy-wfd-small-availability
+  namespace: where-for-dinner-small-1
+spec:
+  source:
+    git:
+      commit: ""
+      tag: ""
+      url: "https://github.com/gabbbar/cartov2-sample-packages"
+      branch: "main"
+    subPath: ""
+  subPath:
+    path: "buildspace2/packages/where-for-dinner-availability.tanzu.vmware.com.default.tap"
+---
+apiVersion: supplychains.tanzu.vmware.com/v1alpha1
+kind: wfd-small-web-deployer
+metadata:
+  name: deploy-wfd-small-search-proc
+  namespace: where-for-dinner-small-1
+spec:
+  source:
+    git:
+      commit: ""
+      tag: ""
+      url: "https://github.com/gabbbar/cartov2-sample-packages"
+      branch: "main"
+    subPath: ""
+  subPath:
+    path: "buildspace2/packages/where-for-dinner-search-proc.tanzu.vmware.com.default.tap"
+---
+apiVersion: supplychains.tanzu.vmware.com/v1alpha1
+kind: wfd-small-web-deployer
+metadata:
+  name: deploy-wfd-small-search
+  namespace: where-for-dinner-small-1
+spec:
+  source:
+    git:
+      commit: ""
+      tag: ""
+      url: "https://github.com/gabbbar/cartov2-sample-packages"
+      branch: "main"
+    subPath: ""
+  subPath:
+    path: "buildspace2/packages/where-for-dinner-search.tanzu.vmware.com.default.tap"
+---
+apiVersion: supplychains.tanzu.vmware.com/v1alpha1
+kind: wfd-small-web-deployer
+metadata:
+  name: deploy-wfd-small-ui
+  namespace: where-for-dinner-small-1
+spec:
+  source:
+    git:
+      commit: ""
+      tag: ""
+      url: "https://github.com/gabbbar/cartov2-sample-packages"
+      branch: "main"
+    subPath: ""
+  subPath:
+    path: "buildspace2/packages/where-for-dinner-ui.tanzu.vmware.com.default.tap"
