@@ -1,0 +1,77 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: where-for-dinner-ui.tanzu.vmware.com.default.tap.20240405175553.0.0
+spec:
+  refName: where-for-dinner-ui.tanzu.vmware.com.default.tap
+  version: 20240405175553.0.0
+  releaseNotes: |
+    Release v20240405175553.0.0 of package where-for-dinner-ui.tanzu.vmware.com.default.tap
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: vipal.azurecr.io/cartov2/sample-apps/where-for-dinner-ui-bundle@sha256:1065b881d1137af2535b6b35790798a72dac27228b6ccd94a717c470da975ab6
+      template:
+      - ytt:
+          paths:
+          - .
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+      deploy:
+      - kapp: {}
+  valuesSchema:
+    openAPIv3:
+      type: object
+      additionalProperties: false
+      properties:
+        workload_name:
+          type: string
+          description: Used to generate resource names.
+          default: where-for-dinner-ui
+        minScale:
+          type: string
+          nullable: true
+          description: If set, overrides the default Knative Service minimum number of replicas.
+          default: null
+        maxScale:
+          type: string
+          nullable: true
+          description: If set, overrides the default Knative Service maximum number of replicas.
+          default: null
+        livenessProbe:
+          nullable: true
+          description: Overrides the default Knative Service.spec.containers[0].livenessProbe set by the Supply Chain.
+          default: null
+        readinessProbe:
+          nullable: true
+          description: Overrides the default Knative Service.spec.containers[0].readinessProbe set by the Supply Chain.
+          default: null
+        resources:
+          nullable: true
+          description: Overrides the default Knative Service.spec.containers[0].resources set by the Supply Chain.
+          default: null
+        env:
+          type: array
+          description: Merges with the default Deployment.spec.containers[0].env set by the Supply Chain. If there is a conflict, the value set here will be used.
+          items:
+            type: object
+            additionalProperties: false
+            properties:
+              name:
+                type: string
+                default: ""
+              value:
+                type: string
+                default: ""
+          default: []
+        securityContext:
+          nullable: true
+          description: Overrides the default Knative Service.spec.containers[0].securityContext set by the Supply Chain.
+          default: null
+        knativeAnnotations:
+          nullable: true
+          description: Specifies additional annotations to merge into Knative Service.spec.metadata.annotations.
+          default: null
