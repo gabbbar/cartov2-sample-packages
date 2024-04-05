@@ -1,12 +1,12 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: where-for-dinner-api-gateway.tanzu.vmware.com.default.tap.20240405123312.0.0
+  name: where-for-dinner-api-gateway.tanzu.vmware.com.default.tap.20240405175135.0.0
 spec:
   refName: where-for-dinner-api-gateway.tanzu.vmware.com.default.tap
-  version: 20240405123312.0.0
+  version: 20240405175135.0.0
   releaseNotes: |
-    Release v20240405123312.0.0 of package where-for-dinner-api-gateway.tanzu.vmware.com.default.tap
+    Release v20240405175135.0.0 of package where-for-dinner-api-gateway.tanzu.vmware.com.default.tap
   template:
     spec:
       fetch:
