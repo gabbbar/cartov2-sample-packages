@@ -6,7 +6,7 @@ spec:
   packageRef:
     refName: where-for-dinner-api-gateway.tanzu.vmware.com.default.tap
     versionSelection:
-      constraints: 20240405175135.0.0
+      constraints: 20240406033108.0.0
       prereleases: {}
   serviceAccountName: default
   values:
