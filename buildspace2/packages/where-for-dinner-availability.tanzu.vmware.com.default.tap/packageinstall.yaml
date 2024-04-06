@@ -6,7 +6,7 @@ spec:
   packageRef:
     refName: where-for-dinner-availability.tanzu.vmware.com.default.tap
     versionSelection:
-      constraints: 20240405175529.0.0
+      constraints: 20240406033333.0.0
       prereleases: {}
   serviceAccountName: default
   values:
