@@ -1,17 +1,17 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: override-feature-gitops.default.tap.20240408131203.0.0
+  name: override-feature-gitops.default.tap.20240408204245.0.0
 spec:
   refName: override-feature-gitops.default.tap
-  version: 20240408131203.0.0
+  version: 20240408204245.0.0
   releaseNotes: |
-    Release v20240408131203.0.0 of package override-feature-gitops.default.tap
+    Release v20240408204245.0.0 of package override-feature-gitops.default.tap
   template:
     spec:
       fetch:
       - imgpkgBundle:
-          image: vipal.azurecr.io/cartov2/sample-apps/tanzu-java-web-app-bundle@sha256:61817cbce1debdd337b876437cc0e8c428f0e0c4380b176b9161c4ca1adc5f17
+          image: vipal.azurecr.io/cartov2/sample-apps/tanzu-java-web-app-bundle@sha256:baf7671dbe9956a0bb2e0fca4bb60ed92103da871dd523ad48f58fdb186a04b0
       template:
       - ytt:
           paths:
