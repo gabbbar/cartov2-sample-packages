@@ -1,17 +1,17 @@
 apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
-  name: tanzu-java-web-app.default.tap.20240408141721.0.0
+  name: tanzu-java-web-app.default.tap.20240408221832.0.0
 spec:
   refName: tanzu-java-web-app.default.tap
-  version: 20240408141721.0.0
+  version: 20240408221832.0.0
   releaseNotes: |
-    Release v20240408141721.0.0 of package tanzu-java-web-app.default.tap
+    Release v20240408221832.0.0 of package tanzu-java-web-app.default.tap
   template:
     spec:
       fetch:
       - imgpkgBundle:
-          image: vipal.azurecr.io/cartov2/sample-apps/tanzu-java-web-app-bundle@sha256:d2bbbec9f625b49ec106bbf62fad2a89a0b38880c4af1c397c775e6f8d300e44
+          image: vipal.azurecr.io/cartov2/sample-apps/tanzu-java-web-app-bundle@sha256:a23d83ee4d1b5a1b2088af564d9645fbd781bb3e909a766e6cf2985b125ffacf
       template:
       - ytt:
           paths:
